@@ -2,11 +2,11 @@ package app.ui;
 
 import java.util.ArrayList;
 
-public class Organizer {
+public class Organizer extends person{
     private String organizerId;
     private ArrayList<Camp> camps;
 
-    public Organizer(String organizerId) {
+    public Organizer(String organizerId, String name) {
         this.organizerId = organizerId;
         this.camps = new ArrayList<>();
     }
