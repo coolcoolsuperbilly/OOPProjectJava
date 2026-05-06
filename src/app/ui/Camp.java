@@ -11,21 +11,21 @@ public class Camp {
     private Organizer organizer;
 
     public Camp(String campId, Organizer organizer) {
-        this.campId = campId;
-        this.campName = campId;
-        this.location = "TBD";
-        this.date = "";
-        this.organizer = organizer;
-        this.registrations = new ArrayList<>();
+        this.setCampId(campId);
+        this.setCampName(campId);
+        this.setLocation("TBD");
+        this.setDate("");
+        this.setOrganizer(organizer);
+        this.setRegistrations(new ArrayList<>());
     }
 
     public Camp(String campId, String campName, String location, String date, Organizer organizer) {
-        this.campId = campId;
-        this.campName = campName;
-        this.location = location;
-        this.date = date;
-        this.organizer = organizer;
-        this.registrations = new ArrayList<>();
+        this.setCampId(campId);
+        this.setCampName(campName);
+        this.setLocation(location);
+        this.setDate(date);
+        this.setOrganizer(organizer);
+        this.setRegistrations(new ArrayList<>());
     }
 
     public String getCampId() { return campId; }
@@ -73,4 +73,24 @@ public class Camp {
     public String toString() {
         return campId + " - " + campName + " @ " + location;
     }
+    
+    // Getters and extra setters
+	public void setRegistrations(ArrayList<Registration> registrations) {
+		this.registrations = registrations;
+	}
+	public void setOrganizer(Organizer organizer) {
+		this.organizer = organizer;
+	}
+	public void setLocation(String location) {
+		this.location = location;
+	}
+	public void setCampName(String campName) {
+		this.campName = campName;
+	}
+	public void setCampId(String campId) {
+		this.campId = campId;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
 }
