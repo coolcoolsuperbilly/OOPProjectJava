@@ -38,4 +38,8 @@ public class Organizer extends Person{
 	public void addCamp(Camp c) {
 		this.camps.add(c);
 	}
+	@Override
+	public void register() {
+		System.out.println("Organizer Registered");
+	}
 }
