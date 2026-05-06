@@ -2,11 +2,11 @@ package app.ui;
 
 import java.util.ArrayList;
 
-public class Organizer {
+public class Organizer extends Person{
     private String organizerId;
     private ArrayList<Camp> camps;
 
-    public Organizer(String organizerId) {
+    public Organizer(String organizerId,String name) {
         this.organizerId = organizerId;
         this.camps = new ArrayList<>();
     }
@@ -36,5 +36,6 @@ public class Organizer {
 	}
 	public void addCamp(Camp c) {
 		this.camps.add(c);
+		
 	}
 }
