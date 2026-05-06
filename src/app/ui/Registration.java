@@ -15,6 +15,16 @@ public class Registration {
     public String getDate() { return date; }
     public Donor getDonor() { return donor; }
 
+	public void setRegistrationId(String registrationId) {
+		this.registrationId = registrationId;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
+	public void setDonor(Donor donor) {
+		this.donor = donor;
+	}
+
     public void displayRegistration() {
         System.out.println("Registration ID: " + registrationId);
         System.out.println("Date: " + date);
