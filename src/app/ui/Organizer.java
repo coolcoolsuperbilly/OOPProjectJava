@@ -38,6 +38,9 @@ public class Organizer extends Person{
 	public void addCamp(Camp c) {
 		this.camps.add(c);
 	}
+	public void removeCamp(int index) {
+		this.camps.remove(index);
+	}
 	@Override
 	public void register() {
 		System.out.println("Organizer Registered");
