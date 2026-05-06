@@ -2,7 +2,7 @@ package app.ui;
 
 import java.util.ArrayList;
 
-public class Organizer extends person{
+public class Organizer extends Person{
     private String organizerId;
     private ArrayList<Camp> camps;
 
