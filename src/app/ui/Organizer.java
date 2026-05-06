@@ -7,6 +7,7 @@ public class Organizer extends Person{
     private ArrayList<Camp> camps;
 
     public Organizer(String organizerId, String name) {
+		super(name);
         this.organizerId = organizerId;
         this.camps = new ArrayList<>();
     }
