@@ -106,7 +106,6 @@ public class FileManager {
 					)
 				);
 			}
-			System.out.println(data.size());
 			return data;
 		} catch (SQLException e) {
 			System.out.println("An Error Occured,Read Failure. Trace:");
