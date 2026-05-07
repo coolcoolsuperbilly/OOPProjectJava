@@ -3,6 +3,7 @@ package app.ui;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.Scanner;
 
 public class MainUI extends JFrame {
     private static final long serialVersionUID = 1L;
@@ -148,6 +149,13 @@ public class MainUI extends JFrame {
     }
 
     public static void main(String[] args) {
+    	Scanner sc = new Scanner(System.in);
+    	System.out.print("Enter Organizer Id:");
+    	String organizerId = sc.next();
+    	System.out.print("Enter Organizer Name:");
+    	String organizerName = sc.next();
+    	AppData.organizer = new Organizer(organizerId,organizerName);
+    	sc.close();
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception ignored) {}
