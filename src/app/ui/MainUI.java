@@ -6,14 +6,15 @@ import java.awt.event.*;
 
 public class MainUI extends JFrame {
     private static final long serialVersionUID = 1L;
-	// ── Card keys ────────────────────────────────────────────────────────────
+    
+    // Screens
     private static final String SCREEN_DASHBOARD = "DASHBOARD";
     private static final String SCREEN_ADD_DONOR = "ADD_DONOR";
     private static final String SCREEN_VIEW_DONOR= "VIEW_DONOR";
     private static final String SCREEN_ADD_CAMP  = "ADD_CAMP";
     private static final String SCREEN_VIEW_CAMP = "VIEW_CAMP";
 
-    // ── Panels (kept to allow refresh) ───────────────────────────────────────
+    // Panels (kept to refresh)
     private final ViewDonorsUI   viewDonorsUI   = new ViewDonorsUI();
     private final ViewCampsUI    viewCampsUI    = new ViewCampsUI();
 
@@ -21,8 +22,8 @@ public class MainUI extends JFrame {
     private final JPanel     screens = new JPanel(cards);
 
     private JButton activeBtn = null;
-
-    // ── Constructor ───────────────────────────────────────────────────────────
+    
+    // UI init
     public MainUI() {
         super("Blood Donation Camp Management System");
         
@@ -50,14 +51,14 @@ public class MainUI extends JFrame {
         cards.show(screens, SCREEN_DASHBOARD);
     }
 
-    // ── Sidebar ───────────────────────────────────────────────────────────────
+    // Sidebar
     private JPanel buildSidebar() {
         JPanel side = new JPanel();
         side.setLayout(new BoxLayout(side, BoxLayout.Y_AXIS));
         side.setBackground(new Color(0x1A1A2E));
         side.setPreferredSize(new Dimension(200, 0));
 
-        // logo
+        // Header
         JLabel lbl = new JLabel("<html><center>🩸<br><b style='color:white;font-size:13px'>"
                 + "BloodCamp</b><br><span style='color:#aaa;font-size:10px'>Management System</span></center></html>");
         lbl.setHorizontalAlignment(SwingConstants.CENTER);
@@ -71,7 +72,7 @@ public class MainUI extends JFrame {
         side.add(navBtn("Add Camp",SCREEN_ADD_CAMP));
         side.add(navBtn("View Camps",SCREEN_VIEW_CAMP));
 
-        side.add(Box.createVerticalGlue()); // Spacer
+        side.add(Box.createVerticalGlue()); // Spaceng
 
         // exit button at bottom
         JButton exitBtn = sideBtn("Exit Application");
@@ -131,7 +132,6 @@ public class MainUI extends JFrame {
         activeBtn = btn;
     }
 
-    // ── Helpers ───────────────────────────────────────────────────────────────
     private void showCard(String card) {
         cards.show(screens, card);
     }
@@ -147,7 +147,6 @@ public class MainUI extends JFrame {
         }
     }
 
-    // ── main ──────────────────────────────────────────────────────────────────
     public static void main(String[] args) {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
