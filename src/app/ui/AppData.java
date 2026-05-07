@@ -1,10 +1,10 @@
 package app.ui;
 
 public class AppData {
-	// Contains Static Objects / Method that connects Backend and UI (Used for Association)
+	// Contains Static Objects / Method that connects Backend and UI (Used)
     // ── Backend singletons ───────────────────────────────────────────────────
-    public final static Organizer   organizer   = new Organizer("ORG101","Organizer1");
-    public final static Validator   validator   = new Validator();
+    public static Organizer organizer;
+    public final static Validator validator = new Validator();
     public final static FileManager fileManager = new FileManager("data");
     
     private AppData() {}
