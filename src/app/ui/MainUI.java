@@ -3,7 +3,6 @@ package app.ui;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.Scanner;
 
 public class MainUI extends JFrame {
     private static final long serialVersionUID = 1L;
@@ -147,15 +146,35 @@ public class MainUI extends JFrame {
         	System.exit(0);
         }
     }
+    
+    private static boolean organizerLogin() {
+    	JTextField orgtxtId = new JTextField();
+        JTextField orgtxtName = new JTextField();
+        JPanel panel = new JPanel(new GridLayout(2, 2, 10, 10));
+        
+        panel.add(new JLabel("Enter Organizer ID:"));
+        panel.add(orgtxtId);
+
+        panel.add(new JLabel("Enter Organizer Name:"));
+        panel.add(orgtxtName);
+        
+        int result = JOptionPane.showConfirmDialog(
+        		null,
+                panel,
+                "Organizer Login",
+                JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.PLAIN_MESSAGE
+        );
+        if (result != JOptionPane.OK_OPTION) return false;
+        String organizerId = orgtxtId.getText().trim();
+        String organizerName = orgtxtName.getText().trim();
+        
+    	AppData.organizer = new Organizer(organizerId,organizerName);
+    	if(organizerId.isEmpty() || organizerName.isEmpty()) return false; // no login
+    	return true;
+    }
 
     public static void main(String[] args) {
-    	Scanner sc = new Scanner(System.in);
-    	System.out.print("Enter Organizer Id:");
-    	String organizerId = sc.next();
-    	System.out.print("Enter Organizer Name:");
-    	String organizerName = sc.next();
-    	AppData.organizer = new Organizer(organizerId,organizerName);
-    	sc.close();
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception ignored) {}
@@ -163,6 +182,9 @@ public class MainUI extends JFrame {
         UITheme.applyGlobalDefaults();
 
         SwingUtilities.invokeLater(() -> {
+        	if(!organizerLogin()) {
+        		System.exit(0);
+        	};
             MainUI frame = new MainUI();
             frame.setVisible(true);
         });
