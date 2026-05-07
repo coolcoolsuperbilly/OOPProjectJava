@@ -1,6 +1,6 @@
 package app.ui;
 
-abstract class Person {
+public abstract class Person {
     protected String name;
 
     public Person(String name) {
@@ -10,10 +10,8 @@ abstract class Person {
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
     public abstract void register();
 }
