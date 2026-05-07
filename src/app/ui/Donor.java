@@ -41,6 +41,10 @@ public class Donor extends Person {
     public void setBloodPressure(double bloodPressure) {
         this.bloodPressure = bloodPressure;
     }
+    
+    public void setAge(int age) { this.age = age; }
+    public void setBloodGroup(String bg) { this.bloodGroup = bg; }
+    public void setDonorId(String id) { this.donorId = id; }
 
     public void displayDonorDetails() {
         System.out.println("Donor ID: " + donorId);
